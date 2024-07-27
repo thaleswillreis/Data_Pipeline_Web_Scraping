@@ -1,18 +1,18 @@
-# Web Scraping Project with Python and Scrapy
+# Projeto de Web Scraping com Python e Scrapy
 
-## Description
+## Descrição
 
-This is a didactic project that extracts product data from an e-commerce website using the Scrapy library. The extracted data is processed and stored in a database using SQLite for later analysis.
+Este é um projeto didático e realiza a extração de dados de produtos de um site e-commerce utilizando a biblioteca Scrapy. Os dados extraídos são processados e armazenados em um banco de dados usando SQLite para posterior análises.
 
-## Project Structure
+## Estrutura do Projeto
 
-The project is structured according to the Scrapy standard and in addition to the standard folder structure, it contains the following main files:
+O projeto é estruturado de acordo com o padrão do Scrapy e além da estrutura de pastas padrão, contém os seguintes arquivos principais:
 
-### File: `mercadolivre.py`
+### Arquivo: `mercadolivre.py`
 
-This file contains the code for the Scrapy spider responsible for extracting product information from the Mercado Livre search results list.
+Este arquivo contém o código do spider Scrapy responsável por extrair informações de produtos da lista de resultados de busca do Mercado Livre.
 
-#### Code:
+#### Código:
 
 ```python
 import scrapy
@@ -56,11 +56,12 @@ class MercadolivreSpider(scrapy.Spider):
                 # Faz uma requisição para a próxima página e chama o método parse novamente
                 yield scrapy.Request(url=proxima_pagina, callback=self.parse)
 ```
-### File: `data_transformation.py`
 
-This file contains the code responsible for processing the extracted data, adding metadata, cleaning the data and storing it in a SQLite database.
+### Arquivo: `data_transformation.py`
 
-#### Code:
+Este arquivo contém o código responsável por processar os dados extraídos, adicionando metadados, limpando os dados e armazenando-os em um banco de dados SQLite.
+
+#### Código:
 
 ```python
 import pandas as pd
@@ -134,34 +135,35 @@ if __name__ == "__main__":
     ml_data = MercadoLivreData(json_path, db_path, source_url)
     ml_data.process()
 ```
-## Features
 
-* **Data Extraction** : Uses Scrapy to extract information from Mercado Livre products, such as product name, rating, number of ratings and price.
-* **Data Transformation** : Processes the extracted data, adds metadata and cleans the information.
-* **Data Storage** : Saves the processed data in an SQLite database for later analysis.
+## Funcionalidades
 
-## Results
+* **Extração de Dados** : Utiliza Scrapy para extrair informações de produtos do Mercado Livre, como nome do produto, avaliação, quantidade de avaliações e preço.
+* **Transformação de Dados** : Processa os dados extraídos, adiciona metadados e limpa as informações.
+* **Armazenamento de Dados** : Salva os dados processados em um banco de dados SQLite para análise posterior.
 
-The extracted and processed data is stored in an SQLite database (`scrp_ml.db`) and can be used for various market and pricing analyses.
+## Resultados
 
-## Running the Project
+Os dados extraídos e processados estão armazenados em um banco de dados SQLite (`scrp_ml.db`) e podem ser utilizados para diversas análises de mercado e precificação.
 
-1. **Install Dependencies** : Make sure you have the necessary libraries installed (`scrapy`, `pandas`, `sqlite3`).
-2. **Run the Spider** : Navigate to the project directory and run the `scrapy crawl mercadolivre` command to start collecting data.
-3. **Process the Data**: After collection, run the `data_transformation.py` script to process and save the data to the SQLite database.
+## Executando o Projeto
 
-#### Required Dependencies and Versions
+1. **Instalar Dependências** : Certifique-se de ter as bibliotecas necessárias instaladas (`scrapy`, `pandas`, `sqlite3`).
+2. **Executar o Spider** : Navegue até o diretório do projeto e execute o comando `scrapy crawl mercadolivre` para iniciar a coleta de dados.
+3. **Processar os Dados** : Após a coleta, execute o script `data_transformation.py` para processar e salvar os dados no banco de dados SQLite.
 
-The software and libraries used in the project had the following versions:
+#### Dependências e Versões Necessárias
 
-* Python - Version: 3.12.4
-* Pandas - Version: 2.2.2
-* Scrapy - Version: 2.11.2
-* SQLite - Version: 3.41.2
+Os softwares e bibliotecas utilizados no projetos tinham a seguintes versões:
 
-**Note:** for more details see the "requirements.txt" file
+* Python - Versão: 3.12.4
+* Pandas - Versão: 2.2.2
+* Scrapy - Versão: 2.11.2
+* SQLite - Versão: 3.41.2
 
-**Related links:**
+**Obs:** para mais detalhes consulte o aquivo "requirements.txt"
+
+**Links relacionados:**
 
 * [Debian Linux](https://www.debian.org/index.pt.html)
 * [VSCode](https://code.visualstudio.com/)
@@ -172,17 +174,17 @@ The software and libraries used in the project had the following versions:
 * [SQLite](https://www.sqlite.org/)
 * [Git](https://git-scm.com/)
 
-## Problems encountered
+## Problemas enfrentados
 
-The code may encounter problems when running using different versions of the language and libraries. Make sure that the versions listed in the "Required Dependencies and Versions" item are correctly installed.
+O código poderá enfrentar problemas ao ser executado utilizando versões diferentes de linguagem e bibliotecas. Certifique-se de que as versões listadas no item "Dependências e Versões Necessárias" estão corretamente instaladas.
 
-If there is already a development environment with different versions in use on the machine being used, a good alternative would be to create a virtual development environment. If in doubt, follow the link to the documentation.
-[Virtual environments and packages](https://docs.python.org/pt-br/3/tutorial/venv.html)
+Caso já exista um ambiente de desenvolvimento com versões diferentes em uso na máquina utilizada, uma boa alternativa seria a criação de uma ambiente virtual de desenvolvimento. Em caso de dúvida, segue o link da documentação.
+[Ambientes virtuais e pacotes](https://docs.python.org/pt-br/3/tutorial/venv.html)
 
-## Contribution
+## Contribuição
 
-Contributions are welcome! Feel free to open issues and pull requests in the project repository.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull requests no repositório do projeto.
 
-## License
+## Licença
 
-This project is licensed under the MIT License - see the [LICENSE]() file for more details.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE]() para mais detalhes.
