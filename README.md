@@ -185,4 +185,4 @@ Contributions are welcome! Feel free to open issues and pull requests in the pro
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE]() file for more details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/thaleswillreis/Data_Pipeline_Web_Scraping?tab=MIT-1-ov-file) file for more details.
