@@ -187,4 +187,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir issues e pull re
 
 ## Licença
 
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE]() para mais detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](https://github.com/thaleswillreis/Data_Pipeline_Web_Scraping/blob/main/LICEN%C3%87A_PT-BR.md) para mais detalhes.
